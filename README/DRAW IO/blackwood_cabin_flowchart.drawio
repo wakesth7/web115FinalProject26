@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-11-11T18:24:00.000Z" agent="5.0" version="24.0.0" type="device">
+  <diagram id="blackwood-cabin-v3" name="Snowed In at Blackwood Cabin">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Character Customization Node -->
+        <mxCell id="node_custom" value="&lt;b&gt;CHARACTER CUSTOMIZATION&lt;/b&gt;&lt;br&gt;Text Input: Enter Player Name&lt;br&gt;(Female Protagonist)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="30" width="320" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Start Node -->
+        <mxCell id="node_start" value="&lt;b&gt;START NODE: The Blackout &amp;amp; Safe Theft&lt;/b&gt;&lt;br&gt;Blizzard cuts power; wall safe found empty.&lt;br&gt;Suspects: Mike, Sophie, Dustin, Ellie, Will, Julie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="140" width="360" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Edge Custom -> Start -->
+        <mxCell id="edge_custom_start" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_custom" target="node_start">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Branch A: Basement & Mudroom -->
+        <mxCell id="node_branch_a" value="&lt;b&gt;Branch A: Basement &amp;amp; Mudroom&lt;/b&gt;&lt;br&gt;Investigate breaker box &amp;amp; back entry.&lt;br&gt;Clues tied to Julie &amp;amp; outside access." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="140" y="290" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Branch B: The Kitchen -->
+        <mxCell id="node_branch_b" value="&lt;b&gt;Branch B: The Kitchen&lt;/b&gt;&lt;br&gt;Question Ellie &amp;amp; Mike.&lt;br&gt;Clears alibis; finds torn rental manual &amp;amp; receipt." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="290" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Branch C: The Study -->
+        <mxCell id="node_branch_c" value="&lt;b&gt;Branch C: The Study&lt;/b&gt;&lt;br&gt;Inspect open wall safe.&lt;br&gt;Question Sophie, Dustin &amp;amp; Will." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="290" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Edges Start -> Branches -->
+        <mxCell id="edge_start_a" value="Search Basement/Mudroom" style="endArrow=classic;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_start" target="node_branch_a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_start_b" value="Search Kitchen" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_start" target="node_branch_b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_start_c" value="Search Study" style="endArrow=classic;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_start" target="node_branch_c">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Puzzle 1: Breaker Box -->
+        <mxCell id="node_puzzle_a" value="&lt;b&gt;PUZZLE 1: Breaker Box (Text Input)&lt;/b&gt;&lt;br&gt;Enter 4-letter riddle password.&lt;br&gt;Success: Restores smart-lock &amp;amp; reveals&lt;br&gt;pried cellar window latch + muddy boot print." style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="120" y="420" width="320" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Clue Node B -->
+        <mxCell id="node_clue_b" value="&lt;b&gt;CLUE UNLOCKED: Diagnostic Code&lt;/b&gt;&lt;br&gt;Piece together torn manual &amp;amp; receipt&lt;br&gt;to get 4-digit safe override code." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="445" width="280" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Puzzle 2: Safe Audit Log -->
+        <mxCell id="node_puzzle_c" value="&lt;b&gt;PUZZLE 2: Safe Audit Log (Text Input)&lt;/b&gt;&lt;br&gt;Enter 4-digit diagnostic code.&lt;br&gt;Success: Reveals Sophie's temporary&lt;br&gt;passcode was used to open safe." style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="420" width="320" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Edges Branches -> Puzzles/Clues -->
+        <mxCell id="edge_a_pa" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_branch_a" target="node_puzzle_a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_b_cb" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_branch_b" target="node_clue_b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_c_pc" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_branch_c" target="node_puzzle_c">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Confrontation Node -->
+        <mxCell id="node_confront" value="&lt;b&gt;THE CONFRONTATION NODE (Text Input)&lt;/b&gt;&lt;br&gt;[Player Name] gathers Mike, Sophie, Dustin, Ellie, Will &amp;amp; Julie.&lt;br&gt;Type Culprit Name (Friend or &quot;Stranger&quot;) + Key Evidence." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="630" width="400" height="85" as="geometry" />
+        </mxCell>
+
+        <!-- Edges Puzzles -> Confrontation -->
+        <mxCell id="edge_pa_conf" value="Pass" style="endArrow=classic;html=1;exitX=0.75;exitY=0.75;entryX=0.15;entryY=0;" edge="1" parent="1" source="node_puzzle_a" target="node_confront">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_cb_conf" value="Use Code" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_clue_b" target="node_confront">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_pc_conf" value="Pass" style="endArrow=classic;html=1;exitX=0.25;exitY=0.75;entryX=0.85;entryY=0;" edge="1" parent="1" source="node_puzzle_c" target="node_confront">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Ending 4 (Direct from Breaker Box Fail) -->
+        <mxCell id="node_end4" value="&lt;b&gt;Ending 4: Trapped in the Dark&lt;/b&gt;&lt;br&gt;Fail Breaker Box puzzle twice.&lt;br&gt;No heat, power, or logs until dawn." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="40" y="810" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_pa_end4" value="Fail 2x" style="endArrow=classic;html=1;exitX=0.25;exitY=0.75;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_puzzle_a" target="node_end4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Ending 1 -->
+        <mxCell id="node_end1" value="&lt;b&gt;Ending 1: The Inside Job&lt;/b&gt;&lt;br&gt;Accuse &lt;b&gt;Sophie&lt;/b&gt; + Safe Passcode Log.&lt;br&gt;Sophie confesses to taking valuables&lt;br&gt;to pay off student loans." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="810" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Ending 2 -->
+        <mxCell id="node_end2" value="&lt;b&gt;Ending 2: The Unseen Intruder&lt;/b&gt;&lt;br&gt;Enter &lt;b&gt;&quot;Stranger&quot;&lt;/b&gt; + Window Latch/Boot Print.&lt;br&gt;Proves local prowler snuck in during&lt;br&gt;blackout; clears all 6 friends." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="810" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Ending 3 -->
+        <mxCell id="node_end3" value="&lt;b&gt;Ending 3: False Accusation&lt;/b&gt;&lt;br&gt;Accuse &lt;b&gt;Mike, Dustin, or Will&lt;/b&gt; without proof.&lt;br&gt;Trip ruined; real thief escapes in storm." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="960" y="810" width="250" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Ending 5 -->
+        <mxCell id="node_end5" value="&lt;b&gt;Ending 5: Cold Case&lt;/b&gt;&lt;br&gt;Run out of turns without audit log.&lt;br&gt;Group parts ways with lingering suspicion." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="810" width="240" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Edges Confrontation -> Endings 1, 2, 3 -->
+        <mxCell id="edge_conf_end1" value="Sophie + Log" style="endArrow=classic;html=1;exitX=0.2;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_confront" target="node_end1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_conf_end2" value="Stranger + Latch" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_confront" target="node_end2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_conf_end3" value="Wrong Suspect" style="endArrow=classic;html=1;exitX=0.8;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_confront" target="node_end3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Edge Safe Puzzle -> Ending 5 -->
+        <mxCell id="edge_pc_end5" value="Out of Turns" style="endArrow=classic;html=1;exitX=0.75;exitY=0.75;entryX=0.5;entryY=0;" edge="1" parent="1" source="node_puzzle_c" target="node_end5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
