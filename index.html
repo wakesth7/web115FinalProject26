@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snowed In at Blackwood Cabin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>🌲 Snowed In at Blackwood Cabin</h1>
+      <div class="status-bar">
+        <span>Detective: <strong id="display-name">---</strong></span>
+        <span>Turns Left: <strong id="turns-left">6</strong></span>
+      </div>
+    </header>
+
+    <main>
+      <div id="story-box" class="story-box">
+        <p>Welcome to Blackwood Cabin. Enter your character's name to begin your final post-graduation trip:</p>
+      </div>
+
+      <div id="input-area" class="input-area">
+        <input type="text" id="text-input" placeholder="Enter your name..." />
+        <button id="submit-btn">Start Story</button>
+      </div>
+
+      <div id="choices-area" class="choices-area"></div>
+
+      <div class="clues-panel">
+        <h3>🔎 Clues Collected</h3>
+        <ul id="clues-list">
+          <li>No clues found yet.</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
