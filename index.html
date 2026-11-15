@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB-115 Final Project</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <h1 id="story-title">Story Title Goes Here</h1>
+
+        <section id="story-area">
+            <p id="paragraph1"></p>
+            <p id="paragraph2"></p>
+            <p id="paragraph3"></p>
+            
+            <img id="story-image" src="" alt="Current story scene">
+
+            <div id="choices">
+                <button id="choice-one" type="button">Choice 1</button>
+                <button id="choice-two" type="button">Choice 2</button>
+            </div>
+        </section>
+            <section id="status-area">
+                <h2>Status</h2>
+                <p>Score: <span id="score">0</span></p>
+            </section>
+
+            <section id="inventory">
+                <h2>Inventory</h2>
+                <ul id="inventory-list"></ul>
+            </section>
+        </section>
+            <section id="journal">
+                <h2>Journal</h2>
+                <div id="journal-log"></div>
+        </section>
+
+            <section id="input-area">
+                <label for="story-input">Enter answer:</label>
+                <input type="text" id="story-input">
+                <button id="submit-answer" type="button">Submit</button>
+            </section>
+
+            <div id="tooltip"></div>
+        </main>
+        <script src="js/classes.js"></script>
+        <script src="js/save-system.js"></script>
+        <script src="js/main.js"></script>
+</body>
+</html>
