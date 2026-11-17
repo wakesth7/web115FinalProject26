@@ -24,7 +24,37 @@
 
 ## Story Flowchart
 
-[Add the 13+ node Mermaid flowchart here.]
+```mermaid
+flowchart TD
+    A[Enter Player Name] --> B[Shared Opening]
+    B --> C[Main Incident]
+    C --> D{Choose Path}
+
+    D --> E[Story A: Blackwood Cabin]
+    D --> N[Story B: Placeholder]
+
+    E --> F{Choose Investigation Area}
+
+    F --> G[Basement]
+    F --> H[Kitchen]
+    F --> I[Study]
+
+    G --> J[Breaker Box Puzzle]
+    H --> K[Rental Manual and Receipt Clues]
+    I --> L[Safe Audit Log Puzzle]
+
+    J --> M[Confrontation]
+    K --> M
+    L --> M
+
+    M --> O[Ending 1: Inside Job]
+    M --> P[Ending 2: Unseen Intruder]
+    M --> Q[Ending 3: False Accusation]
+
+    N --> R[Story B Node 1]
+    R --> S[Story B Node 2]
+    S --> T[Story B Ending Placeholder]
+```
 
 ## Technical Features
 

@@ -199,3 +199,58 @@ function loadSavedGame() {
         addJournalEntry("Saved game loaded.");
     }
 }
+const scenes = {
+    start: {
+        id: "start",
+        next: "shared-opening"
+    },
+
+    sharedOpening: {
+        id: "shared-opening",
+        next: "main-choice"
+    },
+
+    mainChoice: {
+        id: "main-choice",
+        choices: ["story-a", "story-b"]
+    },
+
+    storyA: {
+        id: "story-a",
+        next: "cabin-investigation"
+    },
+
+    cabinInvestigation: {
+        id: "cabin-investigation",
+        choices: ["basement", "kitchen", "study"]
+    },
+
+    basement: {
+        id: "basement",
+        next: "breaker-puzzle"
+    },
+
+    kitchen: {
+        id: "kitchen",
+        next: "kitchen-clues"
+    },
+
+    study: {
+        id: "study",
+        next: "safe-puzzle"
+    },
+
+    confrontation: {
+        id: "confrontation",
+        choices: ["inside-job", "intruder", "false-accusation"]
+    },
+
+    storyB: {
+        id: "story-b",
+        next: "story-b-node-1"
+    },
+
+    storyBNode1: {
+        id: "story-b-node-1"
+    }
+};
