@@ -1,15 +1,15 @@
-# 🌲 Snowed In at Blackwood Cabin
+# Snowed In at Blackwood Cabin
 
 An interactive "whodunit" text adventure and mystery game set in a remote mountain cabin during a severe winter blizzard. Stepping into the shoes of a sharp-eyed young woman on her final post-graduation trip—whose name you customize at the start of the game—you investigate rooms, question six college friends, gather clues, and solve text-based puzzles to determine whether one of your own friends stole from the cabin's safe, or if an unseen stranger broke in during the storm.
 
 ---
 
-## 📖 Story Overview
+## Story Overview
 To celebrate graduating and mark one last getaway before everyone moves away to start their new jobs and adult lives, you (playing as a customizable female protagonist) and six of your closest college friends rent a remote mountain cabin for the weekend. As the group's natural problem-solver, you help everyone get settled in—and before dinner, all seven of you lock your watches, emergency cash, and graduation gifts inside the cabin's heavy wall safe for safekeeping. Later that night, a sudden blizzard knocks out the power, and when the backup lights flicker on, the safe door is standing wide open and completely empty. With the mountain roads snowed in until dawn, you take the lead to search the cabin, uncover hidden motives, and determine whether one of your friends betrayed the group or if an intruder slipped inside undetected.
 
 ---
 
-## 🕵️ The 6 Suspects (The Graduating Friend Group)
+## The 6 Suspects (The Graduating Friend Group)
 
 | Suspect | Friend Group Role | Alibi & Suspicious Details |
 | :--- | :--- | :--- |
@@ -22,7 +22,7 @@ To celebrate graduating and mark one last getaway before everyone moves away to 
 
 ---
 
-## 🎮 Gameplay Mechanics & Puzzles
+## Gameplay Mechanics & Puzzles
 Players progress through the story using clickable navigation choices and text-entry challenges:
 
 * **Character Customization (Text Input):** At the very start of the game, players type in their own name for the main character, which is dynamically used throughout the story and suspect dialogue.
@@ -33,10 +33,8 @@ Players progress through the story using clickable navigation choices and text-e
 
 ---
 
-## 🗺️ Branching Flowchart & Endings
-You can also view or edit the full diagram in [`blackwood_cabin_flowchart.drawio`](./blackwood_cabin_flowchart.drawio) using the **Draw.io Integration** extension in VS Code.
+## Branching Flowchart & Endings
 
-```text
 [START: Enter Player Name ──► Power Cuts Out & Wall Safe Found Empty]
        │
        ├──► [Branch A: Basement & Mudroom] ──► Breaker Box Puzzle ──► Reveals Cellar Window Latch & Boot Print
@@ -64,10 +62,6 @@ You can also view or edit the full diagram in [`blackwood_cabin_flowchart.drawio
 
 ---
 
-## 🛠️ Project Setup & Tools
-* **Flowchart Design:** Mapped out in `blackwood_cabin_flowchart.drawio` using [draw.io](https://diagrams.net).
-* **Language / Framework:** `[Insert your language here, e.g., Python / HTML, CSS & JS / Twine]`
-* **How to Run:**
-  1. Clone or download this repository.
-  2. Open the project folder in **VS Code**.
-  3. `[Insert run instructions here, e.g., Run python main.py in the terminal / Open index.html with Live Server]`
+## 🛠️ Project Setup:
+* **Flowchart Design:** Mapped out in `blackwood_cabin_flowchart.drawio` using draw.io
+* **Language / Framework:** HTML, CSS & JS
