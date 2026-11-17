@@ -9,7 +9,7 @@
 - Responsibilities:
 
 ### Shiva
-- Responsibilities:
+- Responsibilities: Weekly meeting agendas, shared minutes from the meetinngs, Responsible for theme[X] design 
 
 ## Application Overview
 
