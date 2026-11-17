@@ -13,7 +13,7 @@
 
 ## Application Overview
 
-[Write the team’s human-written story/gameplay overview here.]
+[Write story/gameplay overview here.]
 
 ## Controls and Navigation
 
