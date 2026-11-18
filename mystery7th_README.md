@@ -26,7 +26,7 @@ He drives his old delivery truck during the heat of the storm knowing the blacko
     2. endings = add the 6th ending where Budd Lynn is the proven culprit
 
 # Needed change to Sarina's methods
-    1. Ending 1: Now Sophie is the innocent suspect 
+    1. Ending 1: Now Sophie is the innocent suspect (Ending 1: The Inside Job -> The Innocent Suspect)
     2. Ending 2: Replace "The Unseen Intruder" with the "The Mysterious Seventh" in order to accomodate Budd's role (True culprit) 
 
 # Conclusion:
