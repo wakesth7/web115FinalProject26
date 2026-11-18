@@ -6,10 +6,10 @@
 - Responsibilities: UI structure, styling, and story interface framework
 
 ### Sarina
-- Responsibilities:
+- Responsibilities: Created an interactive mystery game with css and js file
 
 ### Shiva
-- Responsibilities: Weekly meeting agendas, shared minutes from the meetinngs, Responsible for theme[X] design 
+- Responsibilities: Weekly meeting agendas, shared minutes from the meetinngs, Responsible for second story design "The mysterious seventh at the Blackwood Cabin". This will modify the current Ending 2 - The Unseen Intruder (Twist Ending) to Ending 2 - The Mysterious Seventh (True Culprit)
 
 ## Application Overview
 
