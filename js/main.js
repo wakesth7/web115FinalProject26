@@ -341,6 +341,7 @@ function showInnocentSuspectEnding() {
         "After looking over the evidence again, it becomes clear that Sophie did not steal anything.",
         "By focusing on the wrong person, you gave the real thief a chance to get away."
     );
+    endGame();
 }
 
 function showTrueCulpritEnding() {
@@ -351,6 +352,7 @@ function showTrueCulpritEnding() {
         "Everything points back to Budd as the person who entered the cabin and emptied the safe.",
         "You figured it out and found the true culprit."
     );
+    endGame();
 }
 
 function showFalseAccusationEnding() {
@@ -361,6 +363,7 @@ function showFalseAccusationEnding() {
         "Everyone realizes that there are still important clues that were missed during the investigation.",
         "The mystery remains unsolved."
     );
+    endGame();
 }
 
 function showTrappedInDarkEnding() {
@@ -371,6 +374,7 @@ function showTrappedInDarkEnding() {
         "Without the security information, there is not enough evidence to continue the investigation.",
         "The group has no choice but to wait out the rest of the storm in the dark."
     );
+    endGame();
 }
 
 function showColdCaseEnding() {
@@ -381,6 +385,16 @@ function showColdCaseEnding() {
         "The roads reopen and everyone can finally leave, but the stolen items are never found.",
         "What happened at Blackwood Cabin remains a mystery."
     );
+    endGame();
+}
+
+function endGame() {
+    choiceOne.style.display = "none";
+    choiceTwo.style.display = "none";
+    choiceThree.style.display = "none";
+
+    storyInput.disabled = true;
+    submitAnswer.disabled = true;
 }
 showInvestigationChoice();
     choiceOne.textContent = "Search Basement";
