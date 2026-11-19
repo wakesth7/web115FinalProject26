@@ -11,7 +11,7 @@ He drives his old delivery truck during the middle of the storm knowing the blac
 1. Mike had noticed an old truck engine noise fading away as he had exited to warm up his vehicle during the blackout. Later, Dustin corroborates the story. 
 2. Sophie remembers sharing her passcode with Dustin while at the store. Her temporary passcode was used at 9:42 pm per the safety logs. 
 3. Julie who had organized the rentals knows the cabins once belonged to Budd's grandpa as Budd had mentioned casually during the conversation at the gas station.
-4. The friends noticed leaked coolant and large tire-tracks on the snow.
+4. The friends noticed leaked coolant and large tire-tracks on the snow which they had also noticed while at the gas station. 
 
 # Additional Clues to incorporate 
     1. The broken latch in the cellar (suggests external entry)
@@ -23,6 +23,7 @@ He drives his old delivery truck during the middle of the storm knowing the blac
 
 # Game mechanics to be added to Sarina's methods
     1. clues = add the external elements as mentioned above 
+    2. Evidence board? For each individual members, we can add evidence that goes against them. Tally them up and one with the highest have committed the crime?
 
 # Needed change to Sarina's methods
     1. Ending 1: Now Sophie is the innocent suspect (Ending 1: The Inside Job -> The Innocent Suspect)
