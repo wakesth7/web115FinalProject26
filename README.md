@@ -33,7 +33,7 @@ He drives his old delivery truck during the middle of the storm knowing the blac
 1. Mike had noticed an old truck engine noise fading away as he had exited to warm up his vehicle during the blackout. Later, Dustin corroborates the story. 
 2. Sophie remembers sharing her passcode with Dustin while at the store. Her temporary passcode was used at 9:42 pm per the safety logs. 
 3. Julie who had organized the rentals knows the cabins once belonged to Budd's grandpa as Budd had mentioned casually during the conversation at the gas station.
-4. The friends noticed leaked coolant and large tire-tracks on the snow
+4. The friends noticed leaked coolant and large tire-tracks on the snow which they had also noticed while at the gas station. 
 
 
 ## Conclusion:
