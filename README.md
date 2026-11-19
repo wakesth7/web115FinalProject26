@@ -27,36 +27,43 @@
 ```mermaid
 flowchart TD
     A[Enter Player Name] --> B[Stop at Gas Station]
-    B --> C[Budd Notices Group and Learns Cabin Location]
+    B --> C[Budd Notices the Group]
     C --> D[Arrive at Blackwood Cabin]
-    D --> E[Power Cuts Out and Safe Is Empty]
-    E --> F{Choose Investigation Area}
+    D --> E[Power Goes Out and Safe Is Empty]
+    E --> F{Choose Where to Investigate}
 
-    F --> G[Basement Search]
-    F --> L[Kitchen Search]
-    F --> P[Study Search]
+    F --> G[Search Basement]
+    F --> H[Search Kitchen]
+    F --> I[Search Study]
 
-    G --> H[Breaker Box Puzzle]
-    H --> I[Broken Cellar Latch]
-    I --> J[Size 12 Boot Print]
-    J --> K[Tire Tracks and Coolant]
+    G --> J[Breaker Box Puzzle]
+    J --> K[Find Broken Cellar Latch]
+    K --> L[Find Size 12 Boot Print]
+    L --> M[Find Tire Tracks and Coolant]
 
-    L --> M[Mike and Dustin Hear Old Truck]
-    M --> N[Sophie Remembers Sharing Passcode]
-    N --> O[Julie Connects Budd to Cabin History]
+    H --> N[Question Mike and Dustin]
+    N --> O[Learn About Old Truck Sound]
+    O --> P[Sophie Remembers Sharing Passcode]
+    P --> Q[Julie Connects Budd to Cabin History]
 
-    P --> Q[Safe Audit Puzzle]
-    Q --> R[Passcode Used at 9:42 PM]
+    I --> R[Investigate Safe]
+    R --> S[Safe Audit Puzzle]
+    S --> T[Learn Passcode Was Used at 9:42 PM]
 
-    K --> S[Final Confrontation]
-    O --> S
-    R --> S
+    M --> U[Final Confrontation]
+    Q --> U
+    T --> U
 
-    S --> T[Ending 1: The Innocent Suspect]
-    S --> U[Ending 2: The True Culprit]
-    S --> V[Ending 3: False Accusation]
-    S --> W[Ending 4: Trapped in the Dark]
-    S --> X[Ending 5: Cold Case]
+    U --> V[Accuse Sophie]
+    U --> W[Accuse Budd]
+    U --> X[Make Another Accusation]
+
+    V --> Y[Ending 1: The Innocent Suspect]
+    W --> Z[Ending 2: The True Culprit]
+    X --> AA[Ending 3: False Accusation]
+
+    U --> AB[Ending 4: Trapped in the Dark]
+    U --> AC[Ending 5: Cold Case]
 ```
 
 ## Technical Features

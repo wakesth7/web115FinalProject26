@@ -7,6 +7,7 @@ const storyImage = document.getElementById("story-image");
 
 const choiceOne = document.getElementById("choice-one");
 const choiceTwo = document.getElementById("choice-two");
+const choiceThree = document.getElementById("choice-three");
 
 const inventoryList = document.getElementById("inventory-list");
 const scoreDisplay = document.getElementById("score");
@@ -23,6 +24,12 @@ let currentScene = 0;
 let score = 0;
 let inventory = [];
 let gameOver = false;
+
+let basementSearched = false;
+let kitchenSearched = false;
+let studySearched = false;
+
+let inConfrontation = false;
 
 // Change the story image.
 function changeImage(filename) {
@@ -65,22 +72,35 @@ choiceOne.addEventListener("click", function () {
         return;
     }
 
-    currentScene = 1;
-
-    // Team will add story-specific logic here.
-    addJournalEntry("Choice 1 selected.");
+    if (inConfrontation) {
+        showInnocentSuspectEnding();
+    } else {
+        showBasement();
+    }
 });
 
-// Handle the second choice button.
 choiceTwo.addEventListener("click", function () {
     if (gameOver) {
         return;
     }
 
-    currentScene = 2;
+    if (inConfrontation) {
+        showTrueCulpritEnding();
+    } else {
+        showKitchen();
+    }
+});
 
-    // Team will add story-specific logic here.
-    addJournalEntry("Choice 2 selected.");
+choiceThree.addEventListener("click", function () {
+    if (gameOver) {
+        return;
+    }
+
+    if (inConfrontation) {
+        showFalseAccusationEnding();
+    } else {
+        showStudy();
+    }
 });
 // Validate typed user input.
 function validateStoryInput(input) {
@@ -199,58 +219,170 @@ function loadSavedGame() {
         addJournalEntry("Saved game loaded.");
     }
 }
-const scenes = {
-    start: {
-        id: "start",
-        next: "shared-opening"
-    },
+function showOpening() {
+    displayStoryText(
+        "You and six of your closest college friends decide to take one last trip together after graduation.",
+        "The group rents Blackwood Cabin for the weekend, even though a pretty bad winter storm is on the way.",
+        "Before heading to the cabin, everyone stops at a nearby gas station to grab some last-minute supplies."
+    );
 
-    sharedOpening: {
-        id: "shared-opening",
-        next: "main-choice"
-    },
+    changeImage("");
+}
 
-    mainChoice: {
-        id: "main-choice",
-        choices: ["story-a", "story-b"]
-    },
+function showGasStation() {
+    displayStoryText(
+        "At the gas station, the group meets Budd Lynn, one of the local attendants.",
+        "While talking with the group, Budd notices some of their expensive jewelry and finds out that they are staying at Blackwood Cabin.",
+        "After getting everything they need, the group leaves the gas station and heads to the cabin."
+    );
 
-    storyA: {
-        id: "story-a",
-        next: "cabin-investigation"
-    },
+    changeImage("");
+}
 
-    cabinInvestigation: {
-        id: "cabin-investigation",
-        choices: ["basement", "kitchen", "study"]
-    },
+function showCabinArrival() {
+    displayStoryText(
+        "Once everyone gets settled in, the group puts their watches, emergency cash, and graduation gifts inside the cabin's wall safe.",
+        "Later that night, the storm gets worse and suddenly knocks out the power.",
+        "When the backup lights come on, everyone realizes that the safe is wide open and everything inside is gone."
+    );
 
-    basement: {
-        id: "basement",
-        next: "breaker-puzzle"
-    },
+    changeImage("");
+}
 
-    kitchen: {
-        id: "kitchen",
-        next: "kitchen-clues"
-    },
+function showInvestigationChoice() {
+    displayStoryText(
+        "With the roads covered in snow, nobody is going anywhere until the storm passes.",
+        "You decide to look around the cabin and try to figure out what happened to everyone's belongings.",
+        "Where do you want to investigate first?"
+    );
 
-    study: {
-        id: "study",
-        next: "safe-puzzle"
-    },
+    choiceOne.textContent = "Search Basement";
+    choiceTwo.textContent = "Search Kitchen";
+    choiceThree.textContent = "Search Study";
+}
 
-    confrontation: {
-        id: "confrontation",
-        choices: ["inside-job", "intruder", "false-accusation"]
-    },
+function showBasement() {
+    displayStoryText(
+        "You head down to the basement and quickly notice that something does not look right.",
+        "The cellar window has a broken latch, and nearby you find what looks like a size 12 work boot print.",
+        "When you look outside, you also notice large tire tracks and leaked coolant in the snow."
+    );
 
-    storyB: {
-        id: "story-b",
-        next: "story-b-node-1"
-    },
+    changeImage("");
+    if (!basementSearched) {
+        addToInventory("Broken Cellar Latch");
+        addToInventory("Size 12 Boot Print");
+        addToInventory("Tire Tracks and Coolant");
 
-    storyBNode1: {
-        id: "story-b-node-1"
+        basementSearched = true;
     }
-};
+    checkInvestigationComplete();
+}
+
+function showKitchen() {
+    displayStoryText(
+        "You head back toward the kitchen and start asking everyone what they remember from the night.",
+        "Mike and Dustin both remember hearing what sounded like an old truck driving away during the blackout.",
+        "Sophie remembers sharing the safe passcode at the gas station, and Julie remembers Budd mentioning that his grandfather once owned the cabin."
+    );
+
+    changeImage("");
+    if (!kitchenSearched) {
+        addToInventory("Old Truck Testimony");
+        addToInventory("Shared Passcode Clue");
+        addToInventory("Budd Family Connection");
+
+        kitchenSearched = true;
+    }
+    checkInvestigationComplete();
+}
+
+function showStudy() {
+    displayStoryText(
+        "You search the study where the safe is located and look for anything that might explain how it was opened.",
+        "After checking the safe's information, you discover that the temporary passcode was used at 9:42 PM.",
+        "That means whoever opened the safe probably knew the code instead of breaking into it."
+    );
+
+    changeImage("");
+    if (!studySearched) {
+        addToInventory("Safe Audit Log");
+        
+        studySearched = true;
+    }
+    checkInvestigationComplete();
+}
+function checkInvestigationComplete() {
+    if (basementSearched && kitchenSearched && studySearched) {
+        showConfrontation();
+    }
+}
+function showConfrontation() {
+    inConfrontation = true;
+    
+    displayStoryText(
+        "After searching the cabin and gathering clues, everyone comes together to talk about what you found.",
+        "The evidence points to someone who knew the cabin, knew the safe passcode, and had a way to get inside through the cellar.",
+        "Now you have to decide who you think stole everything."
+    );
+
+    changeImage("");
+
+    choiceOne.textContent = "Accuse Sophie";
+    choiceTwo.textContent = "Accuse Budd";
+    choiceThree.textContent = "Make Another Accusation";
+}
+
+function showInnocentSuspectEnding() {
+    gameOver = true;
+
+    displayStoryText(
+        "You decide to accuse Sophie because she knew the safe passcode.",
+        "After looking over the evidence again, it becomes clear that Sophie did not steal anything.",
+        "By focusing on the wrong person, you gave the real thief a chance to get away."
+    );
+}
+
+function showTrueCulpritEnding() {
+    gameOver = true;
+
+    displayStoryText(
+        "You put all of the clues together: the broken cellar latch, the boot print, the truck, the passcode, and Budd's knowledge of the cabin.",
+        "Everything points back to Budd as the person who entered the cabin and emptied the safe.",
+        "You figured it out and found the true culprit."
+    );
+}
+
+function showFalseAccusationEnding() {
+    gameOver = true;
+
+    displayStoryText(
+        "You make your accusation, but you do not have enough evidence to prove it.",
+        "Everyone realizes that there are still important clues that were missed during the investigation.",
+        "The mystery remains unsolved."
+    );
+}
+
+function showTrappedInDarkEnding() {
+    gameOver = true;
+
+    displayStoryText(
+        "You are unable to get the cabin's systems working again before the storm gets even worse.",
+        "Without the security information, there is not enough evidence to continue the investigation.",
+        "The group has no choice but to wait out the rest of the storm in the dark."
+    );
+}
+
+function showColdCaseEnding() {
+    gameOver = true;
+
+    displayStoryText(
+        "Morning finally arrives before you are able to collect enough evidence.",
+        "The roads reopen and everyone can finally leave, but the stolen items are never found.",
+        "What happened at Blackwood Cabin remains a mystery."
+    );
+}
+showInvestigationChoice();
+    choiceOne.textContent = "Search Basement";
+    choiceTwo.textContent = "Search Kitchen";
+    choiceThree.textContent = "Search Study";
