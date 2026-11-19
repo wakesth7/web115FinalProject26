@@ -26,34 +26,37 @@
 
 ```mermaid
 flowchart TD
-    A[Enter Player Name] --> B[Shared Opening]
-    B --> C[Main Incident]
-    C --> D{Choose Path}
-
-    D --> E[Story A: Blackwood Cabin]
-    D --> N[Story B: Placeholder]
-
+    A[Enter Player Name] --> B[Stop at Gas Station]
+    B --> C[Budd Notices Group and Learns Cabin Location]
+    C --> D[Arrive at Blackwood Cabin]
+    D --> E[Power Cuts Out and Safe Is Empty]
     E --> F{Choose Investigation Area}
 
-    F --> G[Basement]
-    F --> H[Kitchen]
-    F --> I[Study]
+    F --> G[Basement Search]
+    F --> L[Kitchen Search]
+    F --> P[Study Search]
 
-    G --> J[Breaker Box Puzzle]
-    H --> K[Rental Manual and Receipt Clues]
-    I --> L[Safe Audit Log Puzzle]
+    G --> H[Breaker Box Puzzle]
+    H --> I[Broken Cellar Latch]
+    I --> J[Size 12 Boot Print]
+    J --> K[Tire Tracks and Coolant]
 
-    J --> M[Confrontation]
-    K --> M
-    L --> M
+    L --> M[Mike and Dustin Hear Old Truck]
+    M --> N[Sophie Remembers Sharing Passcode]
+    N --> O[Julie Connects Budd to Cabin History]
 
-    M --> O[Ending 1: Inside Job]
-    M --> P[Ending 2: Unseen Intruder]
-    M --> Q[Ending 3: False Accusation]
+    P --> Q[Safe Audit Puzzle]
+    Q --> R[Passcode Used at 9:42 PM]
 
-    N --> R[Story B Node 1]
-    R --> S[Story B Node 2]
-    S --> T[Story B Ending Placeholder]
+    K --> S[Final Confrontation]
+    O --> S
+    R --> S
+
+    S --> T[Ending 1: The Innocent Suspect]
+    S --> U[Ending 2: The True Culprit]
+    S --> V[Ending 3: False Accusation]
+    S --> W[Ending 4: Trapped in the Dark]
+    S --> X[Ending 5: Cold Case]
 ```
 
 ## Technical Features
