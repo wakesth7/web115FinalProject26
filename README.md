@@ -3,42 +3,28 @@
 ## Team Members and Roles
 
 ### Ricardo
-
 - Responsibilities: UI structure, styling, and story interface framework
 
 ### Sarina
-
 - Responsibilities: Created an interactive mystery game with css and js file
 
 ### Shiva
-
-- Responsibilities: Weekly meeting agendas, shared minutes from the meetinngs, Responsible for second story design "The mysterious seventh at the Blackwood Cabin". This will modify the current Ending 2 - The Unseen Intruder (Twist Ending) to Ending 2 - The Mysterious Seventh (True Culprit)
+- Responsibilities: Weekly meeting agendas, added second story "The mysterious seventh at the Blackwood Cabin". This will modify the current Ending 2 - The Unseen Intruder (Twist Ending) to Ending 2 - The Mysterious Seventh (True Culprit), provide final CSS component 
 
 ## Application Overview
 
-[written story/gameplay overview here.]
-[To Do: Outlay for Sarina's story]
+[The main story]
+To celebrate graduating and mark one last getaway before everyone moves away to start their new jobs and adult lives, six of closest college friends rent a remote mountain cabin for the weekend. As the group realizes about the upcoming winter storm, they pay a visit to the gas-station to purchase last minute supplies. Budd Lynn, the local gas attendant, lived few miles off of the Blackwood cabin. His grand father used to own the property back in the day. Growing up, he often visited the cabins with his grandpa so he knew the ins and outs of that place. He learnt that they were staying at the Blackwood cabins while striking a quick conversation with Julie. 
 
+Back at the cabin, everyone get settled in—and before dinner, all friends lock their watches, emergency cash, and graduation gifts inside the cabin's heavy wall safe for safekeeping. Later that night, a sudden blizzard knocks out the power, and when the backup lights flicker on, the safe door is standing wide open and completely empty. With the mountain roads snowed in until dawn, you will take the lead to search the cabin, uncover hidden motives, and determine whether one of the friends betrayed the group or if an intruder slipped inside undetected.
 
-## Story Overview - "The Mysterious Seventh at the Blackwood Cabin"
+## Game play overview
 
-This story adds a seventh character, Budd Lynn, a local gas attendant, few miles off of the Blackwood cabin. His grand father used to own the property back in the day. His own life however, has not been kind to him lately as he's been knee-high on his debts. 
-
-As the group of six close friends knew about the upcoming winter storm, they went to the gas-station where Budd was working to purchase last minute supplies before the storm. Budd could not help but notice the well-to-do friends and their expensive jeweleries. He learnt quickly that they were staying at the Blackwood cabins while striking a quick conversation with Julie.Growing up, he often visited the cabins with his grandpa so he knew the ins and outs. It didn't take him long to realize there would be valueables at the cabins. He decides to make a move later that night. All he had to do now was to wait! 
-
-He drives his old delivery truck during the middle of the storm knowing the blackout will have knocked the power out at the cabin. Having overhead one of the friends share the safe passcode while at the store, all he needed was to find a safe passage. He knew the cellar window was the weak spot. He enters through the window, inputs the passcode in the safe and makes away with cash and several other valueables. 
-
- ## How The Mysterious Seventh links with Sarina's to create a sync. 
-
-1. Mike had noticed an old truck engine noise fading away as he had exited to warm up his vehicle during the blackout. Later, Dustin corroborates the story. 
-2. Sophie remembers sharing her passcode with Dustin while at the store. Her temporary passcode was used at 9:42 pm per the safety logs. 
-3. Julie who had organized the rentals knows the cabins once belonged to Budd's grandpa as Budd had mentioned casually during the conversation at the gas station.
-4. The friends noticed leaked coolant and large tire-tracks on the snow which they had also noticed while at the gas station. 
-
-
-## Conclusion:
-
-Someone with knowledge of the layout of the cabins, equipped with passcode to the safe, opportunity to enter the cabin via the cellar and motive of debt repayment committed the crime. (Ending 2: The True Culprit)
+* Character Customization (Text Input): At the very start of the game, players type in their own name for the main    character, which is dynamically used throughout the story and suspect dialogue.
+* Room Exploration (Button/Menu Choices): Choose which areas of the cabin to search (The Study, The Kitchen, The Basement, or The Mudroom). Each room reveals clues pointing toward either an inside job or an outside intruder.
+* The Breaker Box Puzzle (Text Input): In the basement, players find a jammed fuse panel with a scratched riddle on the metal door. Entering the correct 4-letter password restores power to the cabin's smart-lock and security sensor log.
+* The Safe Override & Audit Log (Text Input): Players piece together a torn rental manual and receipt to enter a 4-digit diagnostic code into the electronic safe keypad, revealing whether the safe was opened with the passcode or bypassed.
+* The Final Accusation (Text Input): To trigger the finale, players must type who is responsible (a specific friend's name or "Stranger") along with the key piece of evidence proving their theory.
 
 ## Controls and Navigation
 
@@ -49,7 +35,47 @@ Someone with knowledge of the layout of the cabins, equipped with passcode to th
 
 ## Story Flowchart
 
-[Add the 13+ node Mermaid flowchart here.]
+```mermaid
+flowchart TD
+    A[Enter Player Name] --> B[Stop at Gas Station]
+    B --> C[Budd Notices the Group]
+    C --> D[Arrive at Blackwood Cabin]
+    D --> E[Power Goes Out and Safe Is Empty]
+    E --> F{Choose Where to Investigate}
+
+    F --> G[Search Basement]
+    F --> H[Search Kitchen]
+    F --> I[Search Study]
+
+    G --> J[Breaker Box Puzzle]
+    J --> K[Find Broken Cellar Latch]
+    K --> L[Find Size 12 Boot Print]
+    L --> M[Find Tire Tracks and Coolant]
+
+    H --> N[Question Mike and Dustin]
+    N --> O[Learn About Old Truck Sound]
+    O --> P[Sophie Remembers Sharing Passcode]
+    P --> Q[Julie Connects Budd to Cabin History]
+
+    I --> R[Investigate Safe]
+    R --> S[Safe Audit Puzzle]
+    S --> T[Learn Passcode Was Used at 9:42 PM]
+
+    M --> U[Final Confrontation]
+    Q --> U
+    T --> U
+
+    U --> V[Accuse Sophie]
+    U --> W[Accuse Budd]
+    U --> X[Make Another Accusation]
+
+    V --> Y[Ending 1: The Innocent Suspect]
+    W --> Z[Ending 2: The True Culprit]
+    X --> AA[Ending 3: False Accusation]
+
+    U --> AB[Ending 4: Trapped in the Dark]
+    U --> AC[Ending 5: Cold Case]
+```
 
 ## Technical Features
 
