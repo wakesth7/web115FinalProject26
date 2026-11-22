@@ -30,7 +30,11 @@ let kitchenSearched = false;
 let studySearched = false;
 
 let inConfrontation = false;
+let breakerPuzzleActive = false;
+let breakerAttempts = 0;
+let investigationTimerStarted = false;
 
+let currentStage = "opening";
 // Change the story image.
 function changeImage(filename) {
     storyImage.src = "img/" + filename;
@@ -69,6 +73,28 @@ function displayStoryText(text1, text2, text3) {
 // Handle the first choice button.
 choiceOne.addEventListener("click", function () {
     if (gameOver) {
+        return;
+    }
+
+     if (currentStage === "opening") {
+        currentStage = "gas-station";
+        showGasStation();
+        return;
+    }
+
+     if (currentStage === "gas-station") {
+        currentStage = "cabin-arrival";
+        showCabinArrival();
+        return;
+    }
+
+     if (currentStage === "cabin-arrival") {
+        currentStage = "investigation";
+        showInvestigationChoice();
+
+        choiceTwo.style.display = "inline-block";
+        choiceThree.style.display = "inline-block";
+
         return;
     }
 
@@ -123,11 +149,26 @@ submitAnswer.addEventListener("click", function () {
         return;
     }
 
-    // Team will add story-specific answer checking here.
-    addJournalEntry("Answer submitted.");
+    if (breakerPuzzleActive) {
+        if (userAnswer.toUpperCase() === "FUSE") {
+            addJournalEntry("The breaker box unlocks and the power comes back on.");
+            breakerPuzzleActive = false;
+            breakerAttempts = 0;
+        } else {
+            breakerAttempts++;
+
+            addJournalEntry("That password did not work.");
+
+            if (breakerAttempts >= 3) {
+                breakerPuzzleActive = false;
+                showTrappedInDarkEnding();
+            }
+        }
+    }
 
     storyInput.value = "";
 });
+
 // Keyboard controls.
 document.addEventListener("keydown", function (event) {
     if (gameOver) {
@@ -167,7 +208,7 @@ let countdown = 10;
 let countdownTimer;
 
 function startCountdown() {
-    countdown = 10;
+    countdown = 90;
 
     countdownTimer = setInterval(function () {
         countdown--;
@@ -178,8 +219,8 @@ function startCountdown() {
             clearInterval(countdownTimer);
 
             if (!gameOver) {
-                addJournalEntry("Time ran out.");
-            }
+                showColdCaseEnding();
+        }
         }
     }, 1000);
 }
@@ -227,6 +268,10 @@ function showOpening() {
     );
 
     changeImage("");
+
+    choiceOne.textContent = "Continue";
+    choiceTwo.style.display = "none";
+    choiceThree.style.display = "none";
 }
 
 function showGasStation() {
@@ -237,6 +282,10 @@ function showGasStation() {
     );
 
     changeImage("");
+
+    choiceOne.textContent = "Continue";
+    choiceTwo.style.display = "none";
+    choiceThree.style.display = "none";
 }
 
 function showCabinArrival() {
@@ -247,6 +296,10 @@ function showCabinArrival() {
     );
 
     changeImage("");
+
+    choiceOne.textContent = "Continue";
+    choiceTwo.style.display = "none";
+    choiceThree.style.display = "none";
 }
 
 function showInvestigationChoice() {
@@ -255,7 +308,10 @@ function showInvestigationChoice() {
         "You decide to look around the cabin and try to figure out what happened to everyone's belongings.",
         "Where do you want to investigate first?"
     );
-
+        if (!investigationTimerStarted) {
+            startCountdown();
+            investigationTimerStarted = true;
+}
     choiceOne.textContent = "Search Basement";
     choiceTwo.textContent = "Search Kitchen";
     choiceThree.textContent = "Search Study";
@@ -267,8 +323,11 @@ function showBasement() {
         "The cellar window has a broken latch, and nearby you find what looks like a size 12 work boot print.",
         "When you look outside, you also notice large tire tracks and leaked coolant in the snow."
     );
+        breakerPuzzleActive = true;
 
+        addJournalEntry("The breaker box needs a 4-letter password. Enter the answer below.");
     changeImage("");
+    
     if (!basementSearched) {
         addToInventory("Broken Cellar Latch");
         addToInventory("Size 12 Boot Print");
@@ -307,13 +366,14 @@ function showStudy() {
     changeImage("");
     if (!studySearched) {
         addToInventory("Safe Audit Log");
-        
+        addJournalEntry("The safe was opened with a temporary passcode at 9:42 PM.");
         studySearched = true;
     }
     checkInvestigationComplete();
 }
 function checkInvestigationComplete() {
     if (basementSearched && kitchenSearched && studySearched) {
+        clearInterval(countdownTimer);
         showConfrontation();
     }
 }
@@ -396,7 +456,4 @@ function endGame() {
     storyInput.disabled = true;
     submitAnswer.disabled = true;
 }
-showInvestigationChoice();
-    choiceOne.textContent = "Search Basement";
-    choiceTwo.textContent = "Search Kitchen";
-    choiceThree.textContent = "Search Study";
+showOpening();
