@@ -1,0 +1,127 @@
+
+
+/* Update outer main layout container wrapper */
+.container {
+  width: 100% !important;
+  max-width: 90% !important; /* Forces the dashboard to utilize 98% of your total screen real estate */
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dashboard-grid1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: stretch; /*forces all four col to match in height down the page*/
+}
+
+.col {
+  background-color: #ffffff; /* white cards pop off pastel background */
+  border: 1px solid #e2e8f0; /*  modern border line */
+  border-radius: 12px;       /* Smooth, rounded card profiles */
+  padding: 24px;
+}
+  
+
+/* Wraps each text label and input pairing to stack cleanly */
+.col form div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* the fonts */ 
+.col label {
+  font-size: 2.8 rem;
+  font-weight: 600;
+  color: #4a5568; /* Elegant slate grey text color */
+}
+
+/* For dashboard headings */
+.col h3 {
+    font-size: 2.8 rem; 
+    font-weight: 700; 
+}
+
+.col input {
+    font-size: 2.8 rem;
+    font-weight: 500;  
+    color: #4a5568;
+}
+
+.col p, #magic-eight-ball p {
+    font-size: 2.8 rem; 
+    font-weight:500; 
+}
+
+/* For my intro header */ 
+.intro-msg {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 1.5rem;      
+    font-weight: 500;        
+    color: #4a5568;           /* Slate grey tone */
+    line-height: 1.6;         /* Leaves comfortable line spaces */
+    margin: 20px 24px;
+}
+
+
+/* Force standard, clean sizes across inputs, text boxes, and menus */
+.col input[type="text"],
+.col input[type="number"],
+.col select {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease; 
+}
+
+/* Global variables */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f4f7f6; /* Mint-grey pastel*/
+  margin: 0;
+  padding: 10px;
+}
+
+h3, h2 {
+  color: #1a202c;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+
+/* Force each column to take up equal standard widths */
+/*.column {
+  flex: 1; 
+  min-width: 0; /* Prevents long text from pushing the column wider */
+
+
+
+/* Keep form inputs stacked vertically inside their own widget container */
+/*.widget {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+
+
+/*body{
+    background-color: #f4f7f6; /*mint-grey pastel color */
+    /*background-color: #f9fbfb; /*Dewdrop white*/
+    /*background-color: #f5f8f7; /*Pale Linen Green 
+}

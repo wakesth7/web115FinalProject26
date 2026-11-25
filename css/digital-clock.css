@@ -1,0 +1,25 @@
+/* Creates the rectangular panel box frame around the clock paragraphs */
+.clock-display {
+    background-color: #1a1a1a !important; /* High-contrast pitch black background */
+    border: 4px solid #dc3545 !important;  /* red frame border outline */
+    border-radius: 8px !important;         
+    padding: 20px ;            
+    display: flex ;
+    flex-direction: column ;
+    gap: 8px ;                  
+    box-sizing: border-box;
+    width: 100% ;
+    margin-top: 10px ;
+}
+
+/* Styles time and date text to look like a premium digital screen */
+#clock-face, 
+#calendar-date {
+    color: #ffffff !important; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 2.0rem !important;         
+    font-weight: 700;         
+    margin: 0 !;                  
+    text-align: left ;           
+    line-height: 1.2 ;         
+}
